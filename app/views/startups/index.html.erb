@@ -1,0 +1,11 @@
+<div class="text-center">
+<h1><%= @vc_firm.name%></h1>
+<h2>Investments</h2>
+<ul class="list-unstyled">
+  <% @startups.each do |startup| %>
+  <li>
+    <%= link_to startup.name, startup_path(startup)  %>
+  </li>
+  <% end %>
+</ul>
+</div>

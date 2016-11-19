@@ -1,0 +1,9 @@
+<div class="text-center">
+<% @vc_firms.each do |vc_firm| %>
+  <h1> <%= link_to vc_firm.name, vc_firm_path(vc_firm) %> </h1>
+  <p><%=  vc_firm.city%></p>
+  <p><%= vc_firm.office_address %></p>
+  <p><%= vc_firm.website %></p>
+  <p><%= vc_firm.sector %></p>
+<% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="text-center">
+    <h1><%= @vc_firm.name %></h1>
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="text-center show-box">
+          <h2>Infos</h2>
+          <p>Address: <%= @vc_firm.office_address %></p>
+          <p>Type : <%= @vc_firm.vc_type %></p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="text-center show-box">
+          <h2>Portfolio companies</h2>
+          <% @vc_firm.startups.each do |startup| %>
+            <p><%= link_to startup.name, startup_path(startup)  %></p>
+          <% end %>
+          <p><%= link_to "All investments", vc_firm_startups_path(@vc_firm) %></p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+      <div class="text-center show-box">
+        <h2>Get in touch</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

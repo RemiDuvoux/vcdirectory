@@ -10,6 +10,20 @@
   </head>
 
   <body>
+  <div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src=<%= image_path('logo.png')%> />
+  </a>
+
+    <!-- Search form -->
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Look for a VC">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+  </div>
     <%= yield %>
   </body>
 </html>

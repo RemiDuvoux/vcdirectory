@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20161119182416) do
 
   create_table "vc_firms", force: :cascade do |t|
     t.date     "creation_date"
-    t.string   "type"
+    t.string   "vc_type"
     t.string   "city"
     t.string   "country"
     t.string   "office_address"
