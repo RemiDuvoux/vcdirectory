@@ -1,5 +1,6 @@
 class VcFirmsController < ApplicationController
   def home
+    @vc_firms = VcFirm.all
   end
 
   def index
