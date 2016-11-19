@@ -4,6 +4,7 @@ class CreateFounders < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.string :phone_number
+      t.references :startup, foreign_key: true
 
       t.timestamps
     end
