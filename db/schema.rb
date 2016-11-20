@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119182416) do
+ActiveRecord::Schema.define(version: 20161119221610) do
 
   create_table "founders", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20161119182416) do
     t.integer  "startup_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "photo"
+    t.string   "twitter"
+    t.string   "facebook"
     t.index ["startup_id"], name: "index_founders_on_startup_id"
   end
 
@@ -49,6 +52,9 @@ ActiveRecord::Schema.define(version: 20161119182416) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "logo"
+    t.string   "twitter"
+    t.string   "facebook"
   end
 
   create_table "vc_firms", force: :cascade do |t|
@@ -65,6 +71,9 @@ ActiveRecord::Schema.define(version: 20161119182416) do
     t.integer  "stage_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "logo"
+    t.string   "twitter"
+    t.string   "facebook"
     t.index ["stage_id"], name: "index_vc_firms_on_stage_id"
   end
 

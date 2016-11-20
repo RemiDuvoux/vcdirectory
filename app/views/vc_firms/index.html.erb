@@ -40,12 +40,12 @@
       <% @vc_firms.each do |vc_firm| %>
       <div class="col-xs-12 col-sm-4">
         <!-- insert <div class="card"> -->
-
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( 'background.png');">
+        <!-- style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%#= cl_image_path @product.photo, height: 300, width: 400, crop: :fill %>')"> -->
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( '<%= cl_image_path vc_firm.logo, height: 2000, width: 1500, crop: :crop %>');">
           <div class="card-category"><%= vc_firm.city %></div>
           <div class="card-description">
             <h2><%= vc_firm.name %></h2>
-            <p><%= link_to 'Website', vc_firm.website %></p>
           </div>
           <img class="card-user avatar" src="user.jpg">
           <%= link_to "", vc_firm_path(vc_firm), class: "card-link" %>
