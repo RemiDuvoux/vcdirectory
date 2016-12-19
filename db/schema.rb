@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119221610) do
+ActiveRecord::Schema.define(version: 20161219091459) do
 
   create_table "founders", force: :cascade do |t|
     t.string   "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20161119221610) do
     t.string   "logo"
     t.string   "twitter"
     t.string   "facebook"
+    t.string   "sector"
   end
 
   create_table "vc_firms", force: :cascade do |t|
@@ -74,6 +75,12 @@ ActiveRecord::Schema.define(version: 20161119221610) do
     t.string   "logo"
     t.string   "twitter"
     t.string   "facebook"
+    t.string   "seed_stage"
+    t.string   "series_a"
+    t.string   "series_b"
+    t.string   "series_c"
+    t.string   "growth_stage"
+    t.string   "category"
     t.index ["stage_id"], name: "index_vc_firms_on_stage_id"
   end
 

@@ -1,30 +1,51 @@
 <div class="container">
   <div class="text-center">
-    <h1><%= cl_image_tag(@vc_firm.logo,
-      width: 100, height: 70, crop: :fill) %><br>
-        <%= link_to "", @vc_firm.facebook, class: "fa fa-facebook", target: '_blank', style: "text-decoration: none"  %>
-        <%= link_to "", @vc_firm.twitter, class: "fa fa-twitter", target: '_blank', style: "text-decoration: none"  %>
+    <h1>  <a target="_blank" href= <%=  @vc_firm.website %>><%= cl_image_tag(@vc_firm.logo,
+      width: 100, height: 70, crop: :fill) %></a>
+
     </h1>
     <div class="row">
       <div class="col-xs-4">
         <div class="text-center show-box">
           <h2>Infos</h2>
+          <% if @vc_firm.description %>
+          <p>Description: <%= @vc_firm.description %></p>
+          <% end %>
+          <% if @vc_firm.office_address %>
           <p>Address: <%= @vc_firm.office_address %></p>
+          <% end %>
+          <% if @vc_firm.vc_type %>
           <p>Type : <%= @vc_firm.vc_type %></p>
+          <% end %>
+          <% if @vc_firm.sector %>
+          <p>Secteurs : <%= @vc_firm.sector %></p>
+          <% end %>
         </div>
       </div>
       <div class="col-xs-4">
         <div class="text-center show-box">
           <h2>Portfolio companies</h2>
           <% @vc_firm.startups.each do |startup| %>
-            <p><%= link_to startup.name, startup_path(startup)  %></p>
+          <p><%= link_to startup.name, startup_path(startup)  %></p>
           <% end %>
           <p><%= link_to "All investments", vc_firm_startups_path(@vc_firm) %></p>
         </div>
       </div>
       <div class="col-xs-4">
-      <div class="text-center show-box">
+        <div class="text-center show-box">
         <h2>Get in touch</h2>
+          <% if @vc_firm.website %>
+          <%= link_to "", @vc_firm.website, class: "fa fa-link", target: '_blank', style: "text-decoration: none ; font-size: 30px; margin: 15px"  %>
+          <% end %>
+          <% if @vc_firm.facebook %>
+          <%= link_to "", @vc_firm.facebook, class: "fa fa-facebook", target: '_blank', style: "text-decoration: none ; font-size: 30px; margin: 15px"  %>
+          <% end %>
+          <% if @vc_firm.twitter %>
+          <%= link_to "", @vc_firm.twitter, class: "fa fa-twitter", target: '_blank', style: "text-decoration: none; font-size: 30px; margin: 15px"  %>
+          <% end %>
+          <% if @vc_firm.office_address %>
+          <p>Adresse: <%= @vc_firm.office_address %></p>
+          <% end %>
         </div>
       </div>
     </div>

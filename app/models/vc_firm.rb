@@ -1,4 +1,7 @@
 class VcFirm < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_name, :against => :name
+
   has_many :stages
   has_many :rounds
   has_many :startups, through: :rounds

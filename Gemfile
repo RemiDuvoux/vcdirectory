@@ -34,6 +34,7 @@ gem "autoprefixer-rails"
 gem 'figaro'
 gem 'cloudinary', '1.1.0'
 gem 'carrierwave'
+gem 'pg_search'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

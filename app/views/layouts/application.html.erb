@@ -15,6 +15,17 @@
   <a href="/" class="navbar-wagon-brand">
     <img src=<%= image_path('logo.png')%> />
   </a>
+   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   <ul class="nav navbar-nav">
+
+  <li><a href="/vc_firms">All VCs</a></li>
+  <li><a href="/vc_firms?query=seed_stage">Seed Stage</a></li>
+  <li><a href="/vc_firms?query=series_a">Series A</a></li>
+  <li><a href="/vc_firms?query=series_b">Series B</a></li>
+  <li><a href="/vc_firms?query=series_c">Series C</a></li>
+  <li><a href="/vc_firms?query=growth_stage">Growth Stage</a></li>
+  </ul>
+  </div>
 
     <!-- Search form -->
     <form action="/vc_firms/index" class="navbar-wagon-search">
